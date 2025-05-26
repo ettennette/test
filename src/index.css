@@ -1,0 +1,55 @@
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/500.css';
+@import '@fontsource/barlow/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Barlow', sans-serif;
+  }
+  
+  body {
+    @apply text-text-charcoal bg-primary-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-gold text-text-charcoal font-medium px-m py-s rounded-md 
+           hover:bg-opacity-90 transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-accent-gold text-text-charcoal font-medium px-m py-s rounded-md
+           hover:bg-primary-beige transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply bg-primary-soft border border-border-light rounded-md px-m py-s
+           focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-opacity-50;
+  }
+
+  .card {
+    @apply bg-primary-white border border-border-light rounded-lg p-l shadow-sm;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
